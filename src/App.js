@@ -5,9 +5,9 @@ import './App.css';
 const CardView = () => {
   return (
     <div className="card-view">
-      <label className="number">4444 4444 4444 4444</label>
-      <label className="name">Manuel Tejeda</label>
-    <div className="issuer">Visa</div>
+      <div className="issuer">Visa</div>
+      <div className="pan">4444 4444 4444 4444</div>
+      <div className="name">Manuel Tejeda</div>
     </div>
   );
 };
@@ -21,16 +21,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="container">
         <CardView />
-        <form>
-          <input type="text" name="pan" />
-          <input
-            type="text"
-            name="cardholder"
-            onChange={this.handleChangeCardHolder}
-          />
-        </form>
+        <div className="card-form">
+          <form>
+            <input type="text" name="pan" />
+            <input
+              type="text"
+              name="cardholder"
+              onChange={this.handleChangeCardHolder}
+            />
+          </form>
+        </div>
       </div>
     );
   }
