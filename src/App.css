@@ -35,5 +35,36 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 }
 
 .card-form {
-  height: 30%;
+  border-top: 1px solid #E4E4E4;
+}
+
+.card-form .item{
+  display: flex;
+  width: 100%;
+}
+
+.item-half {
+  width: 50%;
+}
+
+.card-form label {
+  position: absolute;
+  /* display: block;   */
+}
+
+.card-form input {
+  width: 100%;
+  padding: 32px 12px 12px;
+  font-size: 18px;
+  color: #262626;
+  border: 0;
+  border-bottom: 1px solid #E4E4E4;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  margin-bottom: 0 !important;
+}
+
+.card-form input.border-left {
+  border-left: 1px solid #E4E4E4;
 }

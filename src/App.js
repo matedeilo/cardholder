@@ -25,12 +25,28 @@ class App extends Component {
         <CardView />
         <div className="card-form">
           <form>
-            <input type="text" name="pan" />
-            <input
-              type="text"
-              name="cardholder"
-              onChange={this.handleChangeCardHolder}
-            />
+            <div className="item">
+              <label for="">Card number</label>
+              <input type="text" name="pan" />
+            </div>
+            <div className="item">
+              <label for="" className="label">Name on card</label>
+              <input
+                type="text"
+                name="cardholder"
+                onChange={this.handleChangeCardHolder}
+              />
+            </div>
+            <div className="item">
+              <div className="item-half">
+                <label for="">Expiry date</label>
+                <input type="text" name="cardholder" />
+              </div>
+              <div className="item-half">
+                <label for="">CVC number</label>
+                <input className="border-left" type="text" name="cardholder" />
+              </div>
+            </div>
           </form>
         </div>
       </div>
