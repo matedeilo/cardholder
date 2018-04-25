@@ -17,21 +17,62 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
   display: flex;
   height: calc(100vh - 2rem);
   margin: 1rem 10rem;
-  border: 5px solid #ccc;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
   flex-direction: column;
   align-items: center;
 }
 
 .card-view {
-  border: 5px solid mistyrose;
+  /* border: 5px solid mistyrose; */
   width: 75%;
-  max-width: 450px;
+  max-width: 410px;
   min-width: 350px;
-  height: 25%;
-  background: rgb(79, 77, 77);
+  height: 30%;
+  /* background: rgb(79, 77, 77); */
+  background: linear-gradient(135deg, #bd6772, #53223f);
   color: whitesmoke;
   font-family: 'Iceland', cursive;
   font-size: 1.6em;
+  border-radius: 8px;
+  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.3);
+  margin: 20px 0;
+}
+
+.card-view .issuer {
+  text-align: right;
+  margin: 5px 20px;
+}
+
+.issuer img {
+  width: 1.5em;
+  margin-top: 5px
+}
+
+.card-view .pan {
+  margin: 35px 20px;
+}
+
+.card-view .holder-expiry {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+
+.holder-expiry dd {
+  margin-left: 0;
+}
+
+.holder-expiry dl {
+  margin: 0;
+}
+
+.holder-expiry dt {
+  font-size: 0.6em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .card-form {
@@ -49,7 +90,11 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 .card-form label {
   position: absolute;
-  /* display: block;   */
+  font-size: 12px;
+  font-weight: 700;
+  color: #605C5C;
+  text-transform: uppercase;
+  margin: 5px 0 0 10px;
 }
 
 .card-form input {
