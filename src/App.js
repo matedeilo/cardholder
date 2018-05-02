@@ -7,6 +7,67 @@ import {
   getFormattedExpiryDate,
 } from './Utils';
 import './App.css';
+import styled, {injectGlobal, css} from 'styled-components';
+
+injectGlobal`
+@import url(https://fonts.googleapis.com/css?family=Iceland);
+  .App {
+    text-align: center;
+  }
+
+  .container {
+    display: flex;
+    height: calc(100vh - 2rem);
+    margin: 1rem 10rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+const Label = styled.label`
+  position: absolute;
+  font-size: 12px;
+  font-weight: 700;
+  color: #605c5c;
+  text-transform: uppercase;
+  margin: 5px 0 0 10px;
+`;
+
+const grayborder = css`
+  ${props => {
+    if (props.showBorder) {
+      return `
+      border-left: 1px solid #e4e4e4;
+      `;
+    }
+  }};
+`;
+
+const Input = styled.input`
+  width: 100%;
+  padding: 32px 12px 12px;
+  font-size: 18px;
+  color: #262626;
+  border: 0;
+  border-bottom: 1px solid #e4e4e4;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  margin-bottom: 0 !important;
+  ${grayborder};
+`;
+
+// const Form = styled.form`
+//   border-top: 1px solid #e4e4e4;
+// `;
+
+const BoxItem = styled.div`
+  display: flex;
+  width: ${props => (props.size === 'half' ? '50%' : '100%')};
+`;
 
 class App extends Component {
   state = {
@@ -64,36 +125,34 @@ class App extends Component {
         />
         <div className="card-form">
           <form>
-            <div className="item">
-              <label for="">Card number</label>
-              <input type="text" name="pan" onChange={this.handleChangePan} />
-            </div>
-            <div className="item">
-              <label for="" className="label">
-                Name on card
-              </label>
-              <input
+            <BoxItem>
+              <Label>Card number</Label>
+              <Input type="text" name="pan" onChange={this.handleChangePan} />
+            </BoxItem>
+            <BoxItem>
+              <Label>Name on card</Label>
+              <Input
                 type="text"
                 name="cardholder"
                 onChange={this.handleChangeInput}
               />
-            </div>
-            <div className="item">
-              <div className="item-half">
-                <label for="">Expiry date</label>
-                <input
+            </BoxItem>
+            <BoxItem>
+              <BoxItem size="half">
+                <Label>Expiry date</Label>
+                <Input
                   type="text"
                   name="expiry"
                   value={expiry}
                   onChange={this.handleChangeInput}
                   onKeyUp={this.handleKeyPressExpiry}
                 />
-              </div>
-              <div className="item-half">
-                <label for="">CVC number</label>
-                <input className="border-left" type="text" name="cardholder" />
-              </div>
-            </div>
+              </BoxItem>
+              <BoxItem size="half">
+                <Label>CVC number</Label>
+                <Input showBorder="true" type="text" name="cardholder" />
+              </BoxItem>
+            </BoxItem>
           </form>
         </div>
       </div>
